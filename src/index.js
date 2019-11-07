@@ -117,7 +117,7 @@ class Main extends Component {
 
     playButton = () => {
         clearInterval(this.intervalId);
-        this.intervalId = setInterval(this.play, this.speed);
+        this.intervalId = setInterval(this.play, this.speed, this.seed);
     }
 
     pauseButton = () => {
@@ -125,12 +125,12 @@ class Main extends Component {
     }
 
     slow = () => {
-        this.speed = 300;
+        this.speed = 250;
         this.playButton();
     }
 
     fast = () => {
-        this.speed = 50;
+        this.speed = 75;
         this.playButton();
     }
 
@@ -199,7 +199,7 @@ class Main extends Component {
                     clear={this.clear}
                     seed={this.seed}
                 />
-                <h3 className="text">Iterations: {this.state.generation}</h3>
+                <h3 className="text">Life Cycles: {this.state.generation}</h3>
             </div>
         );
     }
